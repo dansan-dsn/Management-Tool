@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'user',
+    # 'rest_framework_simplejwt',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -75,11 +78,20 @@ WSGI_APPLICATION = 'management_tool.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Management_tool',
+        'PASSWORD' : 'Dan21Dsn!',
+        'USER' : 'root',
+        'HOST': 'localhost',
+        'PORT' : '3306'
     }
 }
 
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'rest_framework_simplejwt.authentication.JWTAuthentication',
+#     ),
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
